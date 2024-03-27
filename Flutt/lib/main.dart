@@ -1,65 +1,35 @@
-import 'package:flutter/material.dart';
-import 'profile_page.dart'; // Import the profile_page.dart file
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebaseauth/screens/signin_screen.dart';
 
-void main() {
-  runApp(MyApp());
+import 'package:flutter/material.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('My Flutter App'),
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        // This is the theme of your application.
+        //
+        // Try running your application with "flutter run". You'll see the
+        // application has a blue toolbar. Then, without quitting the app, try
+        // changing the primarySwatch below to Colors.green and then invoke
+        // "hot reload" (press "r" in the console where you ran "flutter run",
+        // or simply save your changes to "hot reload" in a Flutter IDE).
+        // Notice that the counter didn't reset back to zero; the application
+        // is not restarted.
+        primarySwatch: Colors.blue,
       ),
-      body: Center(
-        child: Text('Welcome to Flutter App!'),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Add onPressed functionality for the FloatingActionButton
-          // e.g., navigate to the profile page
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => ProfilePage()),
-          );
-        },
-        child: Icon(Icons.add),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-        ],
-        // Add onPressed functionality for BottomNavigationBar items
-        onTap: (index) {
-          // Handle navigation or screen switching based on the index
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text('Tapped on Bottom Nav Item $index'),
-            ),
-          );
-        },
-      ),
+      home: const SignInScreen(),
     );
   }
 }
