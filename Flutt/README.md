@@ -3,6 +3,9 @@
 # experiment 3 - (https://github.com/321prasad0058/MAD_LAB/blob/main/Flutt/lib/profile_page.dart)
 # experiment 4 - (https://github.com/321prasad0058/MAD_LAB/blob/main/Flutt/lib/exp4.dart)
 # experiment 5 - (https://github.com/321prasad0058/MAD_LAB/blob/main/Flutt/lib/main.dart)
+# experiment 6 - (https://github.com/321prasad0058/MAD_LAB/blob/main/Flutt/lib/main6.dart)
+# experiment 7 - (https://github.com/321prasad0058/MAD_LAB/blob/main/Flutt/lib/main7.dart)
+
 A new Flutter project.
 
 ## Getting Started
